@@ -15,7 +15,7 @@ If any connection is made the messages received are displayed along with the
 IP address
 
 The application also provides a RSA 2048 bit encrypted communication amongs the
-the users. This means the messages will be communicated at max length of 256 bytes
+users. This means the messages will be communicated at max length of 256 bytes
 To achive this, the application needs the PyCrypto library which can be added to
 your python library using:
 >>  pip install pycrypto
