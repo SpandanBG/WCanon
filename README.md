@@ -1,5 +1,6 @@
 # WCanon
-Python WiFi Encrypted Chat CLI Application to communicate with peers in the network; encrypted with 2048 bit RSA
+Python WiFi Encrypted Chat CLI Application to communicate with peers in the network; encrypted with 2048 bit RSA<br/>
+(WCanon -> acro for WiFi Chat Anonymous)
 
 ## Basic Description
 This application provides a interface to communicate with users under the same network.
