@@ -28,3 +28,6 @@ If app crashes, use `lsof -i tcp:4818` to get the PID (process ID) and then use
   <li> connect 0.0.0.0 -> Connect to the ip address</li>
   <li> exit -> Exit app</li>
 </ul>
+
+# Working
+Check out my blog on the working of the application at: http://sudocoding.xyz/wifi-encypted-chat-app-python/
