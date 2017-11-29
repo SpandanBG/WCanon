@@ -45,7 +45,7 @@ import ast
 >> exitApp() => Starts exit sequence
 """
 def get_my_ip():
-    return socket.gethostbyname(gethostname())
+    return socket.gethostbyname(socket.gethostname())
 
 def banner():
     print '\t\t~WCanon~'
