@@ -26,6 +26,19 @@ The main thread provides a CLI for users of the following functionalities
 3> Send messages to the connected user
 4> Shutdown the app
 
+1> To know the list of users we first need to know our own IP address. To find
+this run:
+
+>>    import socket, fcntl, struct
+>>    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+>>    return socket.inet_ntoa(fcntl.ioctl(
+..        s.fileno(),
+..        0x8915,  # SIOCGIFADDR
+..        struct.pack('256s', *ifname*[:15])
+..    )[20:24])
+
+where *ifname* = in ['eth0', 'wlo1']
+
 ~~ Important! ~~
 If app crashes, use `lsof -i tcp:4818` to get the PID (process ID) and then use
 `kill -9 <PID>` to kill the process.
@@ -45,7 +58,12 @@ import ast
 >> exitApp() => Starts exit sequence
 """
 def get_my_ip():
-    return socket.gethostbyname(socket.gethostname())
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    return socket.inet_ntoa(fcntl.ioctl(
+        s.fileno(),
+        0x8915,
+        struct.pack('256s', 'wlo1'[:15])
+    )[20:24])
 
 def banner():
     print '\t\t~WCanon~'
